@@ -1,4 +1,4 @@
-//package evaluacion1.buscaminas;
+
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
