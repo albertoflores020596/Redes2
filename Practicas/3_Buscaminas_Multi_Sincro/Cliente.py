@@ -79,7 +79,7 @@ UDPClientSocket.connect((HOST, PORT))
 while True:
     Inicio = UDPClientSocket.recv(bufferSize).decode('utf-8')
     if str(Inicio) == "config":
-        print("Bienvenido a BUSCAMINAS.. Configure la partida \n\n")
+        print("Bienvenido a BUSCAMINAS.. Configure la partida antes de iniciar \n\n")
         max = input("Ingresa el maximo de jugadores permitidos: ")
         d = input("\nLa dificultad:\n 1.) Facil (9X9).\n 2.) Dificil (16x16)\n\n Elegie la dificultad: ")
         Mensaje = str(max + ' ' + d)
@@ -108,4 +108,5 @@ Estado=Juego(int(id))
 print("Hola, Bienvenido Jugador " + str(Estado.Nombre))
 thread_read = threading.Thread(target=escuchaTablero, args=[UDPClientSocket,Estado])
 thread_read.start()
+
 
