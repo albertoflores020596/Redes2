@@ -1,7 +1,6 @@
 
 import logging
 bufferSize = 512
-
 class protocoloTFTP (object,):
 
 

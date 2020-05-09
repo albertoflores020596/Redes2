@@ -9,6 +9,7 @@ import shutil
 bufferSize = 512
 logging.basicConfig(level=logging.DEBUG,format='(%(threadName)-2s) %(message)s',)
 
+
 def ls(ruta = 'imgS/.'):
     return [arch for arch in listdir(ruta) if isfile(join(ruta, arch))]
 

@@ -1,7 +1,6 @@
 import socket
 import threading
 import logging
-from pathlib import Path
 import time
 from FTP import *
 from os import listdir
