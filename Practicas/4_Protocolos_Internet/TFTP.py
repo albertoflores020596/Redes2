@@ -18,14 +18,15 @@ class protocoloTFTP (object,):
         elif int(op) == 4:
             logging.debug('Se recibio codigo de operacion 04: Rececibio AKC')
             return 4
-        elif int(op) == 5:
+        elif int(op) == 0:
             error = Paquete[1]
-            m=Paquete[2:len(Paquete)]
-            logging.debug('Se recibio codigo de operacion 05: Error,Codigo de error: ' + str(error) + '-' +m)
-            return 5
-        elif int(op) == 9:
+            #m=Paquete[2:len(Paquete)]
+            logging.debug('Se recibio codigo de operacion 05: Error,Codigo de error: ' + str(error) )
+            return 0
+        elif int(op) == 5:
             logging.debug('Se recibio codigo de operacion 05: Error,Codigo de error 0: Sin definir')
-            return 9
+            return 5
+
 
 
         else:

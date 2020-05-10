@@ -66,9 +66,9 @@ def Atender(UDP,TFTP,conn,Paquete):
 
     elif int(op) == 9:
         Mensaje = TFTP.C5("error", 0, "No definido")
-        logging.debug('Mandando  Paquete Error codigo : 5 ,tipo de error 4:Operacion TFTP Ilegal')
+        logging.debug('Mandando  Paquete Error codigo : 5 ,tipo de error 0:Operacion No definida')
         UDP.sendto(str(Mensaje).encode('utf-8'), conn)
-    else:
+    elif int(op) == 0:
         Mensaje = TFTP.C5("error", 4, "Operacion TFTP Ilegal")
         logging.debug('Mandando  Paquete Error codigo : 5 ,tipo de error 4:Operacion TFTP Ilegal')
         UDP.sendto(str(Mensaje).encode('utf-8'), conn)

@@ -22,7 +22,7 @@ while True:
     op = input("\n\n1-Lectura Archivo\n2-Escritura Archivo\n\nSeleccione una operacion : ")
     with socket.socket(socket.AF_INET,socket.SOCK_DGRAM) as UDPClientSocket:
        if op == '':
-            Mensaje = str('9').encode('utf-8')
+            Mensaje = str('0').encode('utf-8')
             logging.debug('Mandando  Solicitud  codigo : ?')
             UDPClientSocket.sendto(Mensaje, serverAddressPort)
             r = UDPClientSocket.recvfrom(bufferSize)
@@ -72,13 +72,14 @@ while True:
                logging.debug("Terminacion de transferencia Prematura ")
                break
 
-       else:
-           Mensaje = str('000').encode('utf-8')
+       elif int(op) == 0:
+           Mensaje = str('04').encode('utf-8')
            logging.debug('Mandando  Solicitud  codigo : 0')
            UDPClientSocket.sendto(Mensaje, serverAddressPort)
            r = UDPClientSocket.recvfrom(bufferSize)
            Mensaje = str(r[0].decode('utf-8'))
-           TFTP.Identificar(Mensaje)
+           #TFTP.Identificar(Mensaje)}
+           logging.debug(Mensaje)
            logging.debug("Terminacion de transferencia Prematura ")
            break
 

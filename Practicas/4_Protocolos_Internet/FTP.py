@@ -34,6 +34,7 @@ class protocoloTFP(object):
                 logging.debug('Server ' + Mensaje + " : Usuario conectado")
             else:
                 logging.debug('Server ' + Mensaje + " : Usuario o contraseña incorrectas")
+                self.sCLOSE(TCPClientSocket)
 
 
 
@@ -54,6 +55,7 @@ class protocoloTFP(object):
               logging.debug('recibio: ' + coman + ' respuesta: 530')
               conn.send(str('530').encode('utf-8'))
               self.sCLOSE(conn)
+
 
 
     def cConect(self,TCPClientSocket,HOST,PORT):
